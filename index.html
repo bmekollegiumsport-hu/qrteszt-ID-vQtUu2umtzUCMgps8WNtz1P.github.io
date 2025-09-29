@@ -353,6 +353,47 @@ document.addEventListener("DOMContentLoaded", function(event) {
       </div>
       <a href="https://bmekollegiumsport.hu/fiokom/" class="mini-contacts"><i class="icomoon-the7-font-the7-login-02"></i></a>
     </div>
+	  /* --- Alap beállítások --- */
+	  <style>
+.desktop-only {
+  display: block; /* Alapértelmezett: látszik desktopon */
+}
+
+.mobile-only {
+  display: none; /* Alapértelmezett: rejtett desktopon */
+}
+
+/* --- Reszponzív szabályok --- */
+@media (max-width: 991px) {
+  /* Mobil nézet: desktop menüt elrejt, mobil menüt mutat */
+  .desktop-only {
+    display: none;
+  }
+  .mobile-only {
+    display: block;
+  }
+}
+
+/* --- Opció: kosár és fiók ikonok igazítása mobilon --- */
+.mobile-mini-widgets {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+}
+
+/* Mobil logó középre helyezése */
+.mobile-branding {
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+/* Submenu láthatóság kezelés (desktopon hover) */
+.main-nav .menu-item-has-children:hover > .sub-nav {
+  opacity: 1;
+  visibility: visible;
+}
+</style>
   </header>
 
   <!-- Mobil menü -->
