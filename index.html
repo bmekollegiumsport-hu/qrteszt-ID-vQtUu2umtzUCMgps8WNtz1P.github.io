@@ -395,12 +395,15 @@ document.addEventListener("DOMContentLoaded", function(event) {
 }
 		  /* Erőteljes elrejtés mobilon */
 @media (max-width: 768px) {
-  .masthead-mobile,
-  .mobile-header-bar,
-  .mobile-navigation,
-  .mobile-mini-widgets {
+  /* Általános szabály: minden mobile-header-bar maradjon látható */
+.mobile-header-bar {
+    display: block !important;
+}
+
+/* Csak a másodiktól kezdődő duplikációkat rejtsük el */
+.mobile-header-bar:nth-of-type(n+2) {
     display: none !important;
-  }
+}
 }
 
 </style>
