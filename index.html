@@ -395,13 +395,21 @@ document.addEventListener("DOMContentLoaded", function(event) {
 }
 		  /* Erőteljes elrejtés mobilon */
 @media (max-width: 768px) {
-  /* Általános szabály: minden mobile-header-bar maradjon látható */
-.mobile-header-bar {
+  /* 1) Soha ne rejtsük el a teljes mobil headert */
+.masthead-mobile-header,
+.masthead-mobile {
     display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
 }
 
-/* Csak a másodiktól kezdődő duplikációkat rejtsük el */
-.mobile-header-bar:nth-of-type(n+2) {
+/* 2) A duplikált hamburger ikon eltüntetése */
+.mobile-navigation .dt-mobile-menu-icon + .dt-mobile-menu-icon {
+    display: none !important;
+}
+
+/* 3) (Opcionális) Ha duplikált mobile-header-bar lenne egymás után */
+.mobile-header-bar + .mobile-header-bar {
     display: none !important;
 }
 }
