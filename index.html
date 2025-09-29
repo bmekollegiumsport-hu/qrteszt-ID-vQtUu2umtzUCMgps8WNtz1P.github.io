@@ -413,6 +413,24 @@ document.addEventListener("DOMContentLoaded", function(event) {
     display: none !important;
 }
 }
+/* Mobilon tegyük kattinthatóvá a főmenüt */
+@media (max-width: 768px) {
+    #primary-menu {
+        display: block !important;
+    }
+    #primary-menu li {
+        display: block;
+        margin-bottom: 10px;
+    }
+    /* Rejtsük el alapból az almenüket */
+    #primary-menu .sub-nav {
+        display: none;
+    }
+    /* Ha rákattintottak egy szülőre, mutassuk */
+    #primary-menu .menu-item-has-children:hover .sub-nav {
+        display: block !important;
+    }
+}
 
 </style>
   </header>
